@@ -1,0 +1,35 @@
+The your_group_name pet clinic and grooming services Web Application
+the shop offers a wide range of services like breed specific haircuts, and health checkups. A resident veterinarian provides excellent care for your fur babies. your pet's wellbeing is their main concern.
+
+Functional Requirements
+Machine Problems. use Datatables. create model relationships
+Mp1 create customer CRUD functions. let the customer create and update her information. the administrator can delete/deactivate the customer.
+mp3 create pet CRUD functions. the customer will enter their pet's detail.
+mp4 create employee CRUD functions. let the employee signup and the administrator update the employee's role.
+mp5 create pet grooming services CRUD functions with multiple photo uploads of sample haircuts.
+mp6 create import excel files function for mp1-mp5.
+mp7 create an event that will send an email when a new customer signs up.
+
+Unit test use attach/sync and eager loading
+unit 1 create a script for pet health consultation or checkup. the employee evaluates the pet's condition and enters that information to the app. the vet can choose from a predefined list of common diseases or pet injuries. vet observations/comments are also recorded. send an email detailing the result of the consultation to the pet owner 15pts
+unit 2 create an authentication/login function with middleware for employees. CRUD pages are only accessible by the administrator and employee. Customers have their own profile page. 15pts
+quiz 1 create a script that will search for a pet and show it's medical history. a pet can have multiple checkups. use spatie model search or any search package 10pts. use eager loading 5pts
+quiz 2 create a script that will search for a customer and view their transaction history. use spatie model search or any search package 10pts. use eager loading 5pts
+quiz 3 create a script that will let guests comment on grooming services. use a profanity filter package 10pts
+quiz 4 create a chart that shows number of pets groomed with a given date range. use date pickers 10pts
+quiz 5 create a chart that shows the total number of pets and the disease/injuries they suffered. 10pts
+quiz 6 User Interface Design and Navigation 10pts
+
+Term Test 30pts
+1. create CRUD scripts for pet grooming transaction. the customer adds the services she needs. once payment is made, the employee will update the transaction as finished/completed.
+20pts
+2. A receipt will be generated after every transaction. the receipt will be exported on a pdf file. 5pts
+3. add header and footer information on the receipt. format the pdf layout 5pts
+
+Project Requirements may be updated or revised.
+This is a two(2) student project. you may or may not get the same grade. Code contribution is a factor. Choose your partner wisely.
+Full credit will be given if you answer intelligently
+2pts will be deducted in the raw grade for each day that you were absent during checking day
+Everybody should be present on the last day of checking.
+Open your Camera when you are presenting.
+Goodluck
