@@ -24,5 +24,9 @@ class Customer extends Model
     public function pets() {
         return $this->hasMany('App\Models\Pet');
     }
+
+    public function user() {
+        return $this->hasOne('App\Models\User');
+    }
     
 }

@@ -34,5 +34,9 @@ class Employee extends Authenticatable
 
     // ];
 
+    public function user() {
+        return $this->hasOne('App\Models\User');
+    }
+
 
 }
