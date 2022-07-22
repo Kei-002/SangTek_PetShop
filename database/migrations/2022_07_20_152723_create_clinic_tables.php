@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             //
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->text('customer_name');
             $table->text('addressline');
-            $table->text('town');
-            $table->text('zipcode');
             $table->text('phone');
             $table->text('img_path') -> default('default_customer.png');
             // $table->text('status') -> default('ACTIVE');
@@ -41,13 +41,11 @@ return new class extends Migration
 
         Schema::create('employees', function ($table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->text('employee_name');
+            $table->text('addressline');
             $table->text('phone');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('role') -> default('employee');
-            $table->integer('is_admin') -> default('0');
             $table->text('img_path') -> default('default_employee.png');
             $table->timestamps();
             $table->softDeletes();

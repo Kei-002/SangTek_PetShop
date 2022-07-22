@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Employee;
 use Faker\Factory as faker;
+use App\Models\User;
 
 class AdminSeeder extends Seeder
 {
@@ -17,13 +18,19 @@ class AdminSeeder extends Seeder
     public function run()
     {
         $faker=Faker::create();
-        Employee::create([
-            'employee_name' => 'Admin Account',
-            'phone'=> $faker->phoneNumber(),
+        User::create([
+            'name' => 'Admin Account',
             'email' => 'admin@admin.com',
             'password' => bcrypt("admin123"),
             'role' => 'admin',
             'is_admin' => 1
+        ]);
+        
+        Employee::create([
+            'user_id' => 1,
+            'employee_name' => 'Admin Account',
+            'phone'=> $faker->phoneNumber(),
+            'addressline'=> $faker->address()
         ]);
     }
 }

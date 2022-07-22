@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Factory as faker;
 use App\Models\Customer;
+use App\Models\User;
 
 class CustomerSeeder extends Seeder
 {
@@ -17,14 +18,24 @@ class CustomerSeeder extends Seeder
     public function run()
     {
         $faker=Faker::create();
-        foreach(range(1,20) as $index){
+        foreach(range(2,21) as $index){
+            $cusname=$faker->name();
+
+            User::create([
+                'name' => $cusname,
+                'email' => $faker->email(),
+                'password' => bcrypt("default123"),
+                'role' => 'customer',
+                'is_admin' => 0
+            ]);
+
             Customer::create([
-                'customer_name' => $faker->name(),
+                'user_id' => $index,
+                'customer_name' => $cusname,
                 'addressline' => $faker->address(),
-                'town' => $faker->city(),
-                'zipcode' => $faker->postcode(),
                 'phone'=> $faker->phoneNumber() 
             ]);
+            
         }
     }
 }
